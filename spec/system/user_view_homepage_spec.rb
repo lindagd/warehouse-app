@@ -6,7 +6,7 @@ describe 'Usuário visita tela inicial' do
   it 'e vê o nome do app' do
     # Arrange
     # Act: visitar tela inicial
-    visit('/')
+    visit root_path
 
     # Assert: espero q nessa tela tenha as palavras 'galpões' e 'estoque'
     expect(page).to have_content('Galpões e Estoque') 
@@ -20,7 +20,7 @@ describe 'Usuário visita tela inicial' do
                      city: 'Maceio', area: 50_000)
 
     # Act: visitar tela inicial
-    visit('/')
+    visit root_path
 
     # Assert: garantir que eu veja na tela os galpoes Rio e Maceio
     expect(page).not_to have_content('Não existem galpões cadastrados') 
@@ -39,7 +39,7 @@ describe 'Usuário visita tela inicial' do
     # Arrange
 
     # Act
-    visit('/')
+    visit root_path
 
     # Assert
     expect(page).to have_content('Não existem galpões cadastrados') 
