@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    #render 'Galpões e Estoque'
+    @warehouses = Warehouse.all
   end
 end
