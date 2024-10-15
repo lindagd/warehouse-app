@@ -1,8 +1,14 @@
+<p>
+  <%= I18n.l Date.today %>
+</p>
+
+<section id="warehouses">
+<h2>Galpões</h2>
+
 <div>
   <%= link_to 'Cadastrar Galpão', new_warehouse_path %>
 </div>
 
-<h2>Galpões</h2>
 <% if @warehouses.any? %>
   <% @warehouses.each do |w| %>
 
@@ -18,3 +24,4 @@
 <% else %>
   <p>Não existem galpões cadastrados</p>
 <% end %>
+</section>
