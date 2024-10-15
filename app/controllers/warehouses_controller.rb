@@ -12,13 +12,13 @@ class WarehousesController < ApplicationController
                           :description, :code, :address,
                           :city, :cep, :area)   
     
-    warehouse = Warehouse.new(params_warehouse)
-    
-    if warehouse.save
-      flash[:notice] = 'Galpão cadastrado com sucesso'
-      return redirect_to root_path
-    end
-    
+    @warehouse = Warehouse.new(params_warehouse)
 
+    if @warehouse.save
+      return redirect_to root_path, notice: 'Galpão cadastrado com sucesso'
+    end
+
+    flash.now[:notice] = 'Galpão não cadastrado: Campos preenchidos incorretamente'
+    render 'new'
   end
 end
