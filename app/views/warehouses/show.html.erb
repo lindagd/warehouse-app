@@ -6,5 +6,8 @@
 <p>Área: <%= @warehouse.area %> m²</p>
 <p>Endereço: <%= @warehouse.address %> CEP: <%= @warehouse.cep %></p>
 
-<%= link_to 'Editar', edit_warehouse_path(@warehouse.id) %>
+<div>
+  <%= link_to 'Editar', edit_warehouse_path(@warehouse.id) %>
+  <%= button_to 'Remover', warehouse_path(@warehouse.id), method: :delete  %>
+</div>
 <%= link_to 'Voltar', root_path %>
