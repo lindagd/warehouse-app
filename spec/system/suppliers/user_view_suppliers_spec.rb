@@ -12,11 +12,11 @@ describe 'Usuário vê fornecedores' do
 
   it 'com sucesso' do
     Supplier.create!(corporate_name: 'ACME LTDA', brand_name: 'ACME',
-                     registration_number: 4938904567, zip: '90546-000',
+                     registration_number: '4938904567', zip: '90546-000',
                      full_address: 'Av das Palmas, 102', city: 'Santos',
                      state: 'SP', email: 'contato@acme.com.br')
     Supplier.create!(corporate_name: 'Pernambucanas LTDA', brand_name: 'Pernambucanas',
-                     registration_number: 9004563212, zip: '40090-100',
+                     registration_number: '9004563212', zip: '40090-100',
                      full_address: 'Rua Monsenhor Galvão, 230', city: 'Recife',
                      state: 'PE', email: 'contato@pernambucanas.com.br')
     

@@ -1,0 +1,11 @@
+<h1>Fornecedor <%= @supplier.brand_name %></h1>
+<h2><%= @supplier.corporate_name %></h2>
+
+<p>Registro: <%= @supplier.registration_number %></p>
+<p>Endereço: <%= @supplier.full_address %>. <%= @supplier.city %> – <%= @supplier.state %>, <%= @supplier.zip %> </p>
+<p>E-mail: <%= @supplier.email %></p>
+
+<div>
+  <%= link_to 'Editar', edit_supplier_path(@supplier.id) %>
+</div>
+<%= link_to 'Voltar', root_path %>
