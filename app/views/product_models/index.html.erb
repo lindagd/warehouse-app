@@ -5,15 +5,17 @@
     <thead>
       <tr>
         <th>Nome do produto</th>
-        <th>Número de série</th>
+        <th>SKU</th>
         <th>Fornecedor</th>
       </tr>
     </thead>
     <tbody>
       <% @product_models.each do |pm| %>
-        <tr><%= pm.name %></tr>
-        <tr><%= pm.sku %></tr>
-        <tr><%= pm.supplier.brand_name %></tr>
+        <tr>
+          <td><%= pm.name %></td>
+          <td><%= pm.sku %></td>
+          <td><%= pm.supplier.brand_name %></td>
+        </tr>
       <% end %>
     </tbody>
   </table>
@@ -21,4 +23,5 @@
   <p>Não existem modelos de produtos cadastrados</p>
 <% end %>
 
+<%= link_to 'Cadastrar novo modelo de produto', new_product_model_path %>
 <%= link_to 'Voltar', root_path %>
