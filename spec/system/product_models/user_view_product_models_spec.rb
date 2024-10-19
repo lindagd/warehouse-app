@@ -16,7 +16,7 @@ describe 'Usuário vê modelos de produtos' do
                             city: 'São Paulo', state: 'SP', zip: '18098-008', email: 'sac@samsung.com.br')
 
     ProductModel.create!(name: 'TV 32', weight: 8000, width: 70, height: 54,
-                         depth: 5, sku: 'TV32-SAMS-XPTO90', supplier: )
+                         depth: 5, sku: 'TV32-SAMS-XPTO90', supplier: supplier)
     ProductModel.create!(name: 'Smartphone Z-Flip', weight: 900, width: 10, height: 16,
                          depth: 0.8, sku: 'SPZF-SAMS-XRT101', supplier: supplier)
 

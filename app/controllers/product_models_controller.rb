@@ -1,5 +1,5 @@
 class ProductModelsController < ApplicationController
-  before_action :set_product_model, only: [:show]
+  before_action :set_product_model, only: [ :show ]
 
   def index
     @product_models = ProductModel.all
@@ -19,7 +19,8 @@ class ProductModelsController < ApplicationController
       return redirect_to @product_model, notice: 'Modelo de produto cadastrado com sucesso'
     end
 
-    flash.now[:notice] = 'Modelo de produto não cadastrado'
+    @suppliers = Supplier.all
+    flash.now[:notice] = 'Não foi possível cadastrar o modelo de produto'
     render 'new'
   end
 

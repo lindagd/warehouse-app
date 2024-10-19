@@ -13,7 +13,7 @@ RSpec.describe Warehouse, type: :model do
         # Assert
         expect(result).to eq false 
       end
-      
+
       it 'false when code is empty' do
         # Arrange
         warehouse = Warehouse.new(name: 'Rio', code: '', address: 'Endereço',
@@ -22,20 +22,20 @@ RSpec.describe Warehouse, type: :model do
         # Act
         result = warehouse.valid?
         # Assert
-        expect(result).to eq false 
+        expect(result).to eq false
       end
-      
+
       it 'false when address is empty' do
         # Arrange
         warehouse = Warehouse.new(name: 'Rio', code: 'RIO', address: '',
                                   cep: '25768-000', city: 'Rio de Janeiro',
-                                  area: 25000, description: 'Galpão do Rio') 
+                                  area: 25000, description: 'Galpão do Rio')
         # Act
         result = warehouse.valid?
         # Assert
-        expect(result).to eq false 
+        expect(result).to eq false
       end
-      
+
       it 'false when cep is empty' do
         # Arrange
         warehouse = Warehouse.new(name: 'Rio', code: 'RIO', address: 'Endereço',
@@ -57,10 +57,8 @@ RSpec.describe Warehouse, type: :model do
       warehouse2 = Warehouse.create(name: 'Niterói', code: 'RIO', address: 'Endereço 2',
                                   cep: '25800-000', city: 'Niterói',
                                   area: 20000, description: 'Galpão de Niterói')
-      #expect(warehouse2.valid?).to eq false
+
       expect(warehouse2).not_to be_valid
     end
-    
-
-  end  
+  end
 end
