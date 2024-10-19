@@ -21,7 +21,13 @@
       <h1>Galpões e Estoque</h1>
       <nav class="navbar">
         <%= link_to 'Fornecedores', suppliers_path %> |
-        <%= link_to 'Modelos de produtos', product_models_path %>
+        <%= link_to 'Modelos de produtos', product_models_path %> |
+        <% if user_signed_in? %>
+          <%= current_user.email %> |
+          <%= link_to 'Sair', root_path %>
+        <% else %> 
+          <%= link_to 'Fazer Login', new_user_session_path %>
+        <% end %>       
       </nav>
     </header>
     <main>
