@@ -5,7 +5,9 @@ describe 'Usuário cadastra um modelo de produto' do
     supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronics LTDA',
                                 registration_number: '00897633220012', full_address: 'Av Nações Unidas, 12',
                                 city: 'São Paulo', state: 'SP', zip: '18098-008', email: 'sac@samsung.com.br')
+    user = User.create!(name: 'Júlia', email: 'julia@mail.com', password: 'jujubilu00')
 
+    login_as(user)
     visit root_path
     click_on 'Modelos de produtos'
     click_on 'Cadastrar novo modelo de produto'
@@ -31,7 +33,9 @@ describe 'Usuário cadastra um modelo de produto' do
     supplier = Supplier.create!(brand_name: 'Samsung', corporate_name: 'Samsung Eletronics LTDA',
                                 registration_number: '00897633220012', full_address: 'Av Nações Unidas, 12',
                                 city: 'São Paulo', state: 'SP', zip: '18098-008', email: 'sac@samsung.com.br')
+    user = User.create!(name: 'Júlia', email: 'julia@mail.com', password: 'jujubilu00')
 
+    login_as(user)
     visit root_path
     click_on 'Modelos de produtos'
     click_on 'Cadastrar novo modelo de produto'

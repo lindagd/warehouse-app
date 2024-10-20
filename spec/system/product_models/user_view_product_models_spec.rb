@@ -1,7 +1,19 @@
 require 'rails_helper'
 
 describe 'Usuário vê modelos de produtos' do
+  it 'se estiver autenticado' do
+    visit root_path
+    within('.navbar') do
+      click_on 'Modelos de produtos'
+    end
+
+    expect(current_path).to eq new_user_session_path
+  end
+
   it 'a partir do menu' do
+    user = User.create!(name: 'Júlia', email: 'julia@mail.com', password: 'jujubilu00')
+
+    login_as(user)
     visit root_path
     within('.navbar') do
       click_on 'Modelos de produtos'
@@ -20,6 +32,9 @@ describe 'Usuário vê modelos de produtos' do
     ProductModel.create!(name: 'Smartphone Z-Flip', weight: 900, width: 10, height: 16,
                          depth: 0.8, sku: 'SPZF-SAMS-XRT101', supplier: supplier)
 
+    user = User.create!(name: 'Júlia', email: 'julia@mail.com', password: 'jujubilu00')
+
+    login_as(user)
     visit root_path
     click_on 'Modelos de produtos'
 
@@ -32,6 +47,9 @@ describe 'Usuário vê modelos de produtos' do
   end
 
   it 'e não existem produtos cadastrados' do
+    user = User.create!(name: 'Júlia', email: 'julia@mail.com', password: 'jujubilu00')
+
+    login_as(user)
     visit root_path
     click_on 'Modelos de produtos'
 
