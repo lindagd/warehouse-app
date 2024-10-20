@@ -4,12 +4,10 @@ require 'rails_helper'
 
 describe 'Usuário visita tela inicial' do
   it 'e vê o nome do app' do
-    # Arrange
-    # Act: visitar tela inicial
     visit root_path
 
-    # Assert: espero q nessa tela tenha as palavras 'galpões' e 'estoque'
-    expect(page).to have_content('Galpões e Estoque') 
+    expect(page).to have_content('Galpões e Estoque')
+    expect(page).to have_link('Galpões e Estoque', href: root_path)
   end
 
   it 'e vê lista de galpões cadastrados' do

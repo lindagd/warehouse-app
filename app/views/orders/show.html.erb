@@ -1,5 +1,5 @@
-<h1>Pedido <%= @order.id %></h1>
-<h2>Entrega prevista para <%= I18n.localize(@order.estimated_delivery_date, format: :long) %></h2>
-<p><strong>Galpão destino:</strong> <%= @order.warehouse.name %> </p>
-<p><strong>Fornecedor: </strong> <%= @order.supplier.corporate_name %> </p>
-<p><strong>Usuário responsável: </strong> <%= @order.user.name %> | &lt;<%= @order.user.email %>&gt;</p>
+<h1><%= Order.model_name.human %> <%= @order.id %></h1>
+<h2><%= Order.human_attribute_name(:estimated_delivery_date) %>: <%= I18n.localize(@order.estimated_delivery_date, format: :long) %></h2>
+<p><strong><%= Order.human_attribute_name(:warehouse_id) %>:</strong> <%= @order.warehouse.full_description %> </p>
+<p><strong><%= Order.human_attribute_name(:supplier_id) %>: </strong> <%= @order.supplier.corporate_name %> </p>
+<p><strong><%= Order.human_attribute_name(:user) %>: </strong> <%= @order.user.description %></p>

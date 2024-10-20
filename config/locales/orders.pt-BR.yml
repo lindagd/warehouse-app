@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      order: 'Pedido'
+    attributes:
+      order:
+        warehouse_id: 'Galpão destino'
+        supplier_id: 'Fornecedor'
+        user: 'Usuário responsável'
+        estimated_delivery_date: 'Data prevista de entrega'

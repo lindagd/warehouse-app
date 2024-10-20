@@ -27,15 +27,15 @@ describe 'User registers order' do
     login_as(user)
     visit root_path
     click_on 'Registrar Pedido'
-    select warehouse.name, from: 'Galpão destino'
+    select "#{warehouse.code} - #{warehouse.name}", from: 'Galpão destino'
     select supplier.corporate_name, from: 'Fornecedor'
     fill_in 'Data prevista de entrega',	with: '04/11/2024'
     click_on 'Gravar'
 
     expect(page).to have_content 'Pedido registrado com sucesso'
-    expect(page).to have_content 'Entrega prevista para 04 de novembro de 2024'
-    expect(page).to have_content "Galpão destino: #{warehouse.name}"
+    expect(page).to have_content 'Data prevista de entrega: 04 de novembro de 2024'
+    expect(page).to have_content "Galpão destino: #{warehouse.full_description}"
     expect(page).to have_content "Fornecedor: #{supplier.corporate_name}"
-    expect(page).to have_content "Usuário responsável: #{user.name} | <#{user.email}>"
+    expect(page).to have_content "Usuário responsável: #{user.name} - #{user.email}"
   end
 end
