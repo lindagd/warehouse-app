@@ -24,6 +24,8 @@ describe 'User registers order' do
                                 registration_number: '00897633220012', full_address: 'Av Nações Unidas, 12',
                                 city: 'São Paulo', state: 'SP', zip: '18098-008', email: 'sac@samsung.com.br')
 
+    allow(SecureRandom).to receive(:alphanumeric).and_return('ABC12345')
+
     login_as(user)
     visit root_path
     click_on 'Registrar Pedido'
@@ -33,6 +35,7 @@ describe 'User registers order' do
     click_on 'Gravar'
 
     expect(page).to have_content 'Pedido registrado com sucesso'
+    expect(page).to have_content 'Pedido ABC12345'
     expect(page).to have_content 'Data prevista de entrega: 04 de novembro de 2024'
     expect(page).to have_content "Galpão destino: #{warehouse.full_description}"
     expect(page).to have_content "Fornecedor: #{supplier.corporate_name}"

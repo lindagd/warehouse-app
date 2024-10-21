@@ -1,4 +1,4 @@
-<h1><%= Order.model_name.human %> <%= @order.id %></h1>
+<h1><%= Order.model_name.human %> <%= @order.code %></h1>
 <h2><%= Order.human_attribute_name(:estimated_delivery_date) %>: <%= I18n.localize(@order.estimated_delivery_date, format: :long) %></h2>
 <p><strong><%= Order.human_attribute_name(:warehouse_id) %>:</strong> <%= @order.warehouse.full_description %> </p>
 <p><strong><%= Order.human_attribute_name(:supplier_id) %>: </strong> <%= @order.supplier.corporate_name %> </p>
